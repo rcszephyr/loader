@@ -207,26 +207,7 @@ namespace eternity.us
                     bool login = auth.Login(Stuff.username, password);
                     if (login == true)
                     {
-                        if (auth.user.banned == true)
-                        {
-                            MessageBox.Show("Your Account have been banned!", "eternity.us");
-                            auth.OnBannedUser += Auth_OnBannedUser;
-                        }
-                        else
-                        {
-                            right = true;
-                        }
-                        if (auth.user.expired == true)
-                        {
-                            MessageBox.Show("Subscription expired","eternity.us");
-                            auth.OnInvalidUser += Auth_OnInvalidUser;
-                        }
-                        else
-                        {
-                            right = true;
-                        }
-                        if (right == true)
-                        {
+
                             Stuff.user_id = auth.user.id;//useless cuz authed is bugged as fuck :)
                             Stuff.specialint = auth.user.special;
                             Stuff.programid = auth.user.program_id;//useless cuz authed is bugged as fuck :)
@@ -235,7 +216,6 @@ namespace eternity.us
                             eternity.us.Properties.Settings.Default.password = TextPassword.Text;
                             eternity.us.Properties.Settings.Default.Save();
                             timer2.Start();
-                        }
                     }
                     else
                     {
