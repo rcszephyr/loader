@@ -189,8 +189,7 @@ namespace eternity.us
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
             Stuff.username = TextUser.Text;
-            bool right = false;
-
+            
             string password = TextPassword.Text + user_hwid; //pHwid
             if (!(this.Opacity == 1.0))//dont delete this shit, loader will broke
             {
